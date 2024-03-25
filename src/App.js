@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import './index.css'
+import "./index.css";
 import Header from "./Components/header/header";
-import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Outlet,
+  RouterProvider,
+  ScrollRestoration,
+} from "react-router-dom";
 import LinearProgress from "@mui/material/LinearProgress";
-import { CloudinaryImages, CloudinaryVideos } from "./Components/Portfolio/CloudinaryApI/cloudinaryApi";
+import { CloudinaryVideos } from "./Components/Portfolio/CloudinaryApI/cloudinaryApi";
 import Home from "./Components/header/home";
 import Portfolio from "./Components/Portfolio/ThreeD";
 import Animator from "./Components/Portfolio/Animator";
@@ -37,7 +42,7 @@ const router = createBrowserRouter([
         path: "/Animator",
         element: <Animator />,
       },
-      
+
       {
         path: "/T3DIllustration/:name",
         element: <T3DIllustration />,
@@ -52,19 +57,17 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await CloudinaryVideos(); // Perform the required data loading or API calls
-        setLoading(false); 
+        await CloudinaryVideos();
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false even in case of errors
+        setLoading(false);
       }
     };
 
     fetchData();
 
-  
-    return () => {
-    };
+    return () => {};
   }, []);
 
   return (

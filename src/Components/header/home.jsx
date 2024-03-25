@@ -5,14 +5,21 @@ import { MdEmail } from "react-icons/md";
 import "./home.css";
 
 const Home = () => {
-  const [images, setImages] = useState([]);
+  const [videos, setvideos] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const data = useLoaderData();
-
+  console.log(data)
   useEffect(() => {
-    setImages(data);
+    async function fetchData() {
+      try {
+        setvideos(data);
+      } catch (error) {
+       console.log(error)
+      }
+    }
+  fetchData()
   }, []);
 
   const handleImageClick = (index) => {
@@ -25,13 +32,13 @@ const Home = () => {
   };
 
   const handleImageNextClick = () => {
-    setSelectedImageIndex((prev) => (prev + 1) % images.length);
+    setSelectedImageIndex((prev) => (prev + 1) % videos.length);
   };
 
   const handleImagePrevClick = () => {
     setSelectedImageIndex((prev) => {
-      const newIndex = (prev - 1) % images.length;
-      return newIndex >= 0 ? newIndex : newIndex + images.length;
+      const newIndex = (prev - 1) % videos.length;
+      return newIndex >= 0 ? newIndex : newIndex + videos.length;
     });
   };
 
@@ -42,14 +49,17 @@ const Home = () => {
       transition={{ duration: 1 }}
     >
       <div id="Concept-Artist">
-        <div className="grid md:grid-cols-3 gap-2 mx-2 mt-4 border-b-4 bgCon">
-          {images.map((image, index) => (
+        <div className="grid md:grid-cols-4 py-2 gap-2 mx-2 mt-4 border-b-4 bgCon">
+          {videos.map((image, index) => (
             <div
               key={index}
-              className="rounded-md gap-2 ConceptImage hover:scale-105 hover:bg-fixed hover:opacity-95 artIcon duration-300 "
+              className="rounded-md gap-2 hover:scale-105 hover:bg-fixed hover:opacity-95 artIcon duration-300 "
               onClick={() => handleImageClick(index)}
             >
-              <img src={image} alt="" />
+             <video className="h-96 w-96 bg-black 2xl:w-[500px] rounded-md" controls onClick={handleImageClick}>
+          <source src={image} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
             </div>
           ))}
         </div>
@@ -93,7 +103,7 @@ const Home = () => {
                   >
                
                   <img
-                    src={images[selectedImageIndex]}
+                    src={videos[selectedImageIndex]}
                     alt=""
                     className="md:w-[600px] md:h-[500px] 2xl:w-[1000px] 2xl:h-[800px] h-[350px] w-[410px] m-auto rounded-md"
                   />

@@ -12,9 +12,12 @@ export async function CloudinaryImages() {
 }
 
 export async function CloudinaryVideos() {
-  
-  const product= axios.get("https://ace-portfolio-resources.onrender.com/cloudinary/images/Animations").then(response=>{
-  return response
- })
-  return product
+  try {
+    const response = await axios.get("https://ace-portfolio-resources.onrender.com/cloudinary/images/Animations");
+    return response.data;
+  } catch (error) {
+    
+    console.error("Error fetching Cloudinary images:", error);
+    throw error; 
+  }
 }

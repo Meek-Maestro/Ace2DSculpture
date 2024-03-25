@@ -1,0 +1,167 @@
+.gridy{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.stretch{
+    box-sizing: border-box 1px solid white;
+    border: rgb(43, 42, 42) 2px solid;
+    height: 400px;
+    width: stretch;
+    border-radius: 10px;
+}
+.navbtn{
+    font-family: "Croteau-Regular";
+}
+.box{
+    border: 2px rgb(43, 42, 42) solid;
+    border-radius: 10px; 
+    height: 170px;
+    border-bottom: 2px white solid;
+}
+.box:hover{
+    transition: scale(2);
+    box-shadow: 0 4px 8px 0 rgba(250, 245, 245, 0.2);
+}
+.vid-six{
+    box-sizing: border-box;
+    border: 2px rgb(43, 42, 42) solid;
+    height: 370px;
+    width: stretch;
+    transition: 0.5s ease;
+    border-radius: 10px;
+}
+.hidbtn{
+    display: flex;
+ }
+
+body{
+    background-color: black;
+}
+@media (min-width: 1940px) {
+    .stretch{
+        box-sizing: border-box 1px solid white;
+        border: rgb(43, 42, 42) 2px solid;
+        height: 800px;
+        width: auto ;
+        border-radius: 10px;
+        
+    }
+    .vid-six{
+        box-sizing: border-box;
+        border: 2px rgb(43, 42, 42) solid;
+        height: 700px;
+        width: stretch;
+        transition: 0.5s ease;
+        border-radius: 10px;
+    }
+    .box{
+        border-bottom: 2px white solid;
+        height: 200px;
+        width: fit-content;
+        transition: 0.5s ease;
+        border-radius: 10px;
+        margin: 2px;
+        gap: 0;
+    }
+    .py-4{
+        padding: auto;
+    }
+    .vid{
+        width: stretch;
+        margin-left: auto;
+        height: 300px;
+    }
+    .gap-4{
+        display: grid;
+        gap: 0px;
+    }
+    
+}
+@media (max-width:375px) {
+    .gridy{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .vid-six{
+        box-sizing: border-box;
+        border: 2px rgb(43, 42, 42) solid;
+        height: 200px;
+        width: stretch;
+        transition: 0.5s ease;
+        border-radius: 10px;
+    }
+    .ml-10{
+        margin: 10px;
+    }
+    .py-4{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+   
+    .ml-2{
+       display: flex;
+       gap: 3px;
+       margin: auto;
+    }
+    .box{
+        border: 2px rgb(43, 42, 42) solid;
+        border-radius: 10px; 
+        height: 100px;
+        border-bottom: 2px white solid;
+    }
+    .prev{
+        font-family: "Croteau-Regular";
+        font-size: 30px;
+    }
+    .hidden{
+       text-align: center;
+       display: flex;
+       justify-content: center;
+    }
+    
+}
+@media (max-width:425px) {
+    .gridy{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .vid-six{
+        box-sizing: border-box;
+        border: 2px rgb(43, 42, 42) solid;
+        height: 400px;
+        width: stretch;
+        transition: 0.5s ease;
+        border-radius: 10px;
+    }
+    .ml-10{
+        margin: 10px;
+    }
+    .hidden{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+     }
+    .py-4{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .hidbtn{
+       display: none;
+    }
+    .ml-2{
+       display: flex;
+       gap: 3px;
+       margin: auto;
+    }
+    .box{
+        border: 2px rgb(43, 42, 42) solid;
+        border-radius: 10px; 
+        height: 100px;
+        border-bottom: 2px white solid;
+    }
+    .prev{
+        font-family: "Croteau-Regular";
+        font-size: 30px;
+    }
+    
+}

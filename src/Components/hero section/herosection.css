@@ -1,0 +1,80 @@
+
+.grid-cols-2 {
+  grid-template-columns: 60% 40%;
+ 
+}
+.bannerText {
+  text-align: left;
+  font-size: 50px;
+  gap: 20px;
+}
+.PlyBt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.h1 {
+  font-family: "Croteau-Regular";
+  font-size: 60px;
+}
+.h2 {
+  font-size: 30px;
+  font-family: Berlin Sans FB;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 375px) {
+  .grid-cols-2 {
+    grid-template-columns: 100%;
+    margin: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .h1 {
+    text-align: center;
+    font-family: "Croteau-Regular";
+    font-size: 40px;
+  }
+  #reelVideo{
+    height: 500px;
+    width: auto;
+  
+  }
+  .h2 {
+    font-size: 20px;
+    font-family: Berlin Sans FB;
+    font-weight: 600;
+    text-align: center;
+  }
+  .hght {
+    height: 200px;
+    margin-top: 20px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .grid-cols-2 {
+    grid-template-columns: 100%;
+  }
+  .h1 {
+    text-align: center;
+    font-family: "Croteau-Regular";
+    font-size: 40px;
+  }
+  .h2 {
+    font-size: 20px;
+    font-family: Berlin Sans FB;
+    font-weight: 600;
+    text-align: center;
+  }
+  #reelVideo{
+    height: 600px;
+    width: auto;
+  
+  }
+  .hght {
+    height: 300px;
+    margin-top: 20px;
+  }
+}

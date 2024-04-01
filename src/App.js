@@ -13,6 +13,7 @@ import Home from "./Components/header/home";
 import Portfolio from "./Components/Portfolio/ThreeD";
 import Animator from "./Components/Portfolio/Animator";
 import T3DIllustration from "./Components/Portfolio/T3DIllustration";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 
 const Layout = () => {
   return (
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
         element: <T3DIllustration />,
       },
     ],
+    errorElement: <ErrorBoundary />,
   },
 ]);
 

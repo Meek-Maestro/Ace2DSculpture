@@ -18,3 +18,12 @@ code {
 .next{
   font-family: 'Croteau-Regular';
 }
+@font-face {
+  font-family: "Croteau W00 Regular";
+  src: url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.eot");
+  src: url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/019fe8952187100840fda608cdf8a224.svg#Croteau W00 Regular") format("svg");
+}

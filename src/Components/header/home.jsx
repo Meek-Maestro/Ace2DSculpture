@@ -10,22 +10,21 @@ const Home = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const data = useLoaderData();
-  console.log(data)
   useEffect(() => {
     async function fetchData() {
       try {
         setvideos(data);
       } catch (error) {
-       console.log(error)
+        console.log(error);
       }
     }
-  fetchData()
+    fetchData();
   }, []);
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
     setOpenModal(true);
-  };                                      
+  };
 
   const PictureModal = () => {
     setOpenModal(!openModal);
@@ -49,17 +48,16 @@ const Home = () => {
       transition={{ duration: 1 }}
     >
       <div id="Concept-Artist">
-        <div className="grid md:grid-cols-4 py-2 gap-2 mx-2 mt-4 border-b-4 bgCon">
+        <div className="grid md:grid-cols-4 py-2 gap-2 mx-2 mt-4 border-b-4 ">
           {videos.map((image, index) => (
             <div
               key={index}
-              className="rounded-md gap-2 hover:scale-105 hover:bg-fixed hover:opacity-95 artIcon duration-300 "
-              onClick={() => handleImageClick(index)}
+              className="rounded-md gap-2 hover:scale-[1] hover:bg-fixed hover:opacity-95 artIcon duration-300 "
             >
-             <video className="h-96 w-96 bg-black 2xl:w-[500px] rounded-md" controls onClick={handleImageClick}>
-          <source src={image} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+              <video className="h-96 w-96  2xl:w-[500px] rounded-md" controls>
+                <source src={image} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           ))}
         </div>
@@ -80,34 +78,33 @@ const Home = () => {
                   <h1>{`Go back`}</h1>
                 </div>
                 <div className="fixed flex left-0 right-0 bottom-10 gap-8 md:bottom-52 justify-center 2xl:gap-8 2xl:bottom-10 md:gap-[575px] z-[10] md:mr-4">
-                  
-                    <div
-                      className="w-20 bg-gray-700 text-center py-2 md:mx-3 mx-1 mb-3 rounded-sm cursor-pointer active:bg-transparent bg-opacity-75 text-[25px] next"
-                      onClick={handleImagePrevClick}
-                    >
-                      Prev
-                    </div>
-                    <div
-                      className="w-20 bg-gray-700 text-center py-2 md:mx-3 mx-1 mb-3 rounded-sm cursor-pointer  active:bg-transparent bg-opacity-75 next text-[25px]"
-                      onClick={handleImageNextClick}
-                    >
-                      Next
-                    </div>
-                  
+                  <div
+                    className="w-20 bg-gray-700 text-center py-2 md:mx-3 mx-1 mb-3 rounded-sm cursor-pointer active:bg-transparent bg-opacity-75 text-[25px] next"
+                    onClick={handleImagePrevClick}
+                  >
+                    Prev
+                  </div>
+                  <div
+                    className="w-20 bg-gray-700 text-center py-2 md:mx-3 mx-1 mb-3 rounded-sm cursor-pointer  active:bg-transparent bg-opacity-75 next text-[25px]"
+                    onClick={handleImageNextClick}
+                  >
+                    Next
+                  </div>
                 </div>
                 <motion.div
                   key={selectedImageIndex}
-                    initial={{ opacity: 0, x: 100 }}  
-                    animate={{ opacity: 1, x: 0 }}  
-                    transition={{ type: "spring", stiffness: 100, damping: 10 }} 
-                  >
-               
-                  <img
-                    src={videos[selectedImageIndex]}
-                    alt=""
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ type: "spring", stiffness: 100, damping: 10 }}
+                >
+                  <video
                     className="md:w-[600px] md:h-[500px] 2xl:w-[1000px] 2xl:h-[800px] h-[350px] w-[410px] m-auto rounded-md"
-                  />
-               
+                    controls
+                    onClick={handleImageClick}
+                  >
+                    <source src={videos[selectedImageIndex]} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </motion.div>
               </div>
             </motion.div>
@@ -130,13 +127,16 @@ const Home = () => {
 
       <div>
         <h1 className="h1 text-center text-white mt-6 px-2">Contact me</h1>
-        <div className="mb-3  gap-5 flex-col flex ">
-          <a href="mailto:sbnilsson@gmail.com">
-            <div className="Cbox flex gap-2 bgCon duration-300">
-              <MdEmail className="iconSize mx-2 mt-2 text-gray-5" />
-              <h1 className="py-3 textfnt">Email</h1>
-            </div>
-          </a>
+
+        <div className="flex m-auto justify-center">
+          <div className="mb-3  gap-5 flex">
+            <a href="mailto:sbnilsson@gmail.com">
+              <div className="Cbox flex gap-2 bgCon w-72  md:w-96 h-12 rounded-sm duration-300 hover:scale-105 hover:shadow-sm hover:shadow-slate-200">
+                <MdEmail className="text-[25px] text-white mx-2 mt-2 text-gray-5" />
+                <h1 className="py-2 textfnt">Email</h1>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>

@@ -93,7 +93,7 @@ img:active{
   cursor: pointer;
 }
 .conceptHeader{
-  font-family:"Croteau-Regular";
+  font-family:"Croteau";
   font-size: 50px;
 }
 
@@ -112,24 +112,24 @@ img:active{
 }
 
 .rv {
-  font-family: "Croteau-regular";
+  font-family: "Croteau";
   font-size: 20px;
 }
 .gb {
-  font-family: "Croteau-regular";
+  font-family: "Croteau";
   font-size: 30px;
 }
 .fon {
-  font-family: "Croteau-regular";
+  font-family: "Croteau";
   font-size: 21px;
 }
 .text {
-  font-family: "Croteau-Regular";
+  font-family: "Croteau";
   font-size: 60px;
 }
 .T3D-figures {
   font-size: 40px;
-  font-family: "Croteau-Regular";
+  font-family: "Croteau";
 }
 .ml-27 {
   width: 1200px;
@@ -186,7 +186,7 @@ img:active{
   }
   .T3D-figures {
     font-size: 35px;
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
   }
   .grid-cols-4 {
     display: grid;
@@ -231,7 +231,7 @@ img:active{
 @media screen and (max-width: 425px) {
   .conceptHeader {
     font-size: 32px;
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
   }
   .h-16{
     height: 50px;
@@ -251,7 +251,7 @@ img:active{
   }
   .T3D-figures {
     font-size: 32px;
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
   }
   .grid-cols-4 {
     display: grid;

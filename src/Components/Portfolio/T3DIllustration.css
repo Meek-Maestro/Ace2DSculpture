@@ -10,7 +10,7 @@
     border-radius: 10px;
 }
 .navbtn{
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
 }
 .box{
     border: 2px rgb(43, 42, 42) solid;
@@ -110,7 +110,7 @@ body{
         border-bottom: 2px white solid;
     }
     .prev{
-        font-family: "Croteau-Regular";
+        font-family: "Croteau";
         font-size: 30px;
     }
     .hidden{
@@ -160,7 +160,7 @@ body{
         border-bottom: 2px white solid;
     }
     .prev{
-        font-family: "Croteau-Regular";
+        font-family: "Croteau";
         font-size: 30px;
     }
     

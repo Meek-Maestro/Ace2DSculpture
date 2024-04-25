@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./index.css";
 import ErrorImage from "./image.png";
 import Header from "../Components/header/header";
 const ErrorBoundary = () => {
+  const [imageLoaded, setImageLoaded] = useState(true);
   return (
     <div
       className=" h-full fixed w-full"
@@ -14,11 +16,21 @@ const ErrorBoundary = () => {
       <Header />
       <div className="p-[50px] text-center grid justify-center">
         <div className=" h-[200px] border-4 border-blue-400 rounded-full relative z-[30]">
-          <img
-            className=" absolute w-full h-full rounded-full hover:scale-105"
-            src={ErrorImage}
-            alt=""
-          />
+        {imageLoaded ? ( // Render the main image if it has loaded successfully
+        <img
+          className="absolute w-full h-full rounded-full hover:scale-105"
+          src="original-image-url.jpg"
+          alt=""
+          onLoad={() => setImageLoaded(true)} // Update state when the main image loads
+          onError={() => setImageLoaded(false)} // Update state if the main image fails to load
+        />
+      ) : ( // Render the fallback image if the main image failed to load
+        <img
+          className="absolute w-full h-full rounded-full hover:scale-105"
+          src={ErrorImage}
+          alt=""
+        />
+      )}
         </div>
         <h1 className="h1 text-white mb-3">Something went wrong</h1>
         <h2  className="text-[25px] text-white font-bold mb-2">Check your network connection and try again</h2>

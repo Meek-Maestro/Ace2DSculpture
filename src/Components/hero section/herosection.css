@@ -15,7 +15,7 @@
   transform: translate(-50%, -50%);
 }
 .h1 {
-  font-family: "Croteau-Regular";
+  font-family: "Croteau";
   font-size: 60px;
 }
 .h2 {
@@ -33,7 +33,7 @@
   }
   .h1 {
     text-align: center;
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
     font-size: 40px;
   }
   #reelVideo{
@@ -59,7 +59,7 @@
   }
   .h1 {
     text-align: center;
-    font-family: "Croteau-Regular";
+    font-family: "Croteau";
     font-size: 40px;
   }
   .h2 {
